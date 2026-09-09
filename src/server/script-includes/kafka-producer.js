@@ -1,20 +1,21 @@
-var KafkaProducer = Class.create();
+var KafkaProducer = Class.create()
 KafkaProducer.prototype = {
     initialize: function () {},
 
     /**
      * Generic method to push data to Kafka using UniversalProfileKafkaUtils.
      * @param {string} topic - The Kafka topic name.
-     * @param {string} key - The message key.
-     * @param {object|string} value - The message payload (will be stringified if an object).
+     * @param {string} payload - The message payload (JSON string).
+     * @param {string} operation - The operation type (e.g. "insert", "update").
+     * @param {string} injectCorrelationId - The correlation ID for tracing.
+     * @param {string} state - The state value.
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
-    pushToKafka: function (topic, key, value) {
+    pushToKafka: function (topic, payload, operation, injectCorrelationId) {
         try {
-            var payload = typeof value === 'object' ? JSON.stringify(value) : value
             var kafkaUtils = new global.UniversalProfileKafkaUtils()
-            kafkaUtils.insertKafkaOutboundQueue(topic, key, payload)
-            gs.info('KafkaProducer: Successfully enqueued message to topic [' + topic + '] with key [' + key + ']')
+            kafkaUtils.insertKafkaOutboundQueue(topic, payload, operation, injectCorrelationId)
+            gs.info('KafkaProducer: Successfully enqueued message to topic [' + topic + '] with operation [' + operation + '] and correlationId [' + injectCorrelationId + ']')
             return true
         } catch (e) {
             gs.error('KafkaProducer: Failed to enqueue message to topic [' + topic + ']. Error: ' + e.message)
@@ -24,23 +25,27 @@ KafkaProducer.prototype = {
 
     /**
      * Push a content event to the "snu.content.event" Kafka topic.
-     * @param {string} key - The message key.
-     * @param {object|string} value - The message payload.
+     * @param {GlideRecord} gr - The GlideRecord to extract data from.
+     * @param {string} operation - The operation type ("insert" or "update").
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
-    pushContentEvent: function (key, value) {
-        return this.pushToKafka('snu.content.event', key, value)
+    pushContentEvent: function (gr, operation, correlationId) {
+        var payload = JSON.stringify({ sys_id: gr.getUniqueValue() })
+        var correlationId = gr.getValue('content_id')
+        return this.pushToKafka('snu.content.event', payload, operation, correlationId)
     },
 
     /**
      * Push a user event to the "snu.user.events" Kafka topic.
-     * @param {string} key - The message key.
-     * @param {object|string} value - The message payload.
+     * @param {GlideRecord} gr - The GlideRecord to extract data from.
+     * @param {string} operation - The operation type ("insert" or "update").
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
-    pushUserEvent: function (key, value) {
-        return this.pushToKafka('snu.user.events', key, value)
+    pushUserEvent: function (gr, operation, correlationId) {
+        var payload = JSON.stringify({ sys_id: gr.getUniqueValue() })
+        var correlationId = gr.getValue('user')
+        return this.pushToKafka('snu.user.events', payload, operation, correlationId)
     },
 
     type: 'KafkaProducer',
-};
+}
