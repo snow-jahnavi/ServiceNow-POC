@@ -1,0 +1,131 @@
+/*
+
+# query {
+#   xSncSnGraphqlP {
+#     lxpCourse {
+#       courses(limit: 5, active: true, state:"retired") {
+#         name,
+#         short_description,
+#         number
+#       }
+#     }
+#   }
+# }
+
+query GetCourses($limit: Int, $active: Boolean, $state: String) {
+  xSncSnGraphqlP {
+    lxpCourse {
+      courses(
+        limit: $limit
+        active: $active
+        state: $state
+      ) {
+        name
+        short_description
+        number
+      }
+    }
+  }
+}
+
+mutation {
+  xSncSnGraphqlP {
+    lxpCourse {
+      updateCourseDescription(
+        sys_id: "f506ab041bd2e0105b2699f4bd4bcb24",
+        description: "test"
+      ) {
+        success
+        message
+        course {
+          sys_id
+          name
+          description
+        }
+      }
+    }
+  }
+}
+*/
+
+/*
+
+
+{
+  xSncSnGraphqlP {
+    lxpProgress {
+      progressRecords(limit: 10, user_id: "1d5cb9971bfe3c14c47f0d84604bcb0a") {
+        number,
+        # user,
+        content,
+        percent_complete
+      }
+      progressRecord(sys_id: "2e7cb12c87804fd0417c404e0ebb354d") {
+        number,
+        # user,
+        content,
+        percent_complete
+      }
+    }
+  }
+}
+
+*/
+
+/*
+
+{
+  xSncSnGraphqlP {
+    lxpAchievement {
+      achievements(limit: 10, user_id: "<user-sys-id>", achievement_type: "badge", active: true) {
+        sys_id
+        name
+        description
+        user
+        achievement_type
+        badge
+        points
+        earned_on
+      }
+      achievement(sys_id: "<achievement-sys-id>") {
+        sys_id
+        name
+        points
+        earned_on
+      }
+    }
+  }
+}
+
+*/
+
+/*
+
+{
+  xSncSnGraphqlP {
+    lxpUserAchievement {
+      userAchievements(limit: 10, user_id: "1d5cb9971bfe3c14c47f0d84604bcb0a") {
+        sys_id
+        user
+        earned_on
+        content {
+          sys_id
+          name
+          short_description
+          type
+          rating
+        }
+        achievement {
+          sys_id
+          name
+          description
+          achievement_type
+          badge
+          points
+        }
+      }
+    }
+  }
+}
+
+*/

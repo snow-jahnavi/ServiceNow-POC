@@ -1,0 +1,6 @@
+{
+  "scope": "x_snc_sn_graphql_p",
+  "scopeId": "753e367397fe8b90f168f0e3a253affd",
+  "name": "SN GraphQL POC",
+  "tsconfigPath": "./src/server/tsconfig.json"
+}
