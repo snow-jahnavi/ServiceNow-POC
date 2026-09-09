@@ -36,12 +36,12 @@ declare global {
                     'achievement-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'b3cefa295f214c718751ab14b46f2924'
-                        deleted: true
+                        deleted: false
                     }
                     'achievements-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'bd7aaf7e8ba2498f9b1195249a8c7051'
-                        deleted: true
+                        deleted: false
                     }
                     b4158b379736cb90f168f0e3a253af93: {
                         table: 'sys_scope_privilege'
@@ -59,14 +59,26 @@ declare global {
                         table: 'sys_script'
                         id: '658425e0dc7b44038df748c061003cc4'
                     }
+                    'br-push-progress-content-event': {
+                        table: 'sys_script'
+                        id: '0574171a32e24399892648b45dfc0b1c'
+                    }
+                    'br-push-user-achievement-event': {
+                        table: 'sys_script'
+                        id: '20927c413cb840b1adb995870280b404'
+                    }
                     br0: {
                         table: 'sys_script'
                         id: 'a626929faf15425ca451fb9b8eef467e'
                     }
+                    ce00da2ec34343904aacbf0f050131c1: {
+                        table: 'sys_scope_privilege'
+                        id: 'ce00da2ec34343904aacbf0f050131c1'
+                    }
                     'course-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '921eff97dea34015809448799570736f'
-                        deleted: true
+                        deleted: false
                     }
                     'course-single-resolver': {
                         table: 'sys_graphql_resolver'
@@ -81,7 +93,7 @@ declare global {
                     'courses-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '204d5dd41768457ebd89f47fa2206f08'
-                        deleted: true
+                        deleted: false
                     }
                     cs0: {
                         table: 'sys_script_client'
@@ -94,12 +106,12 @@ declare global {
                     'gql-lxp-achievement': {
                         table: 'sys_graphql_schema'
                         id: 'c27feca68c4a421a9a59d4e755bcb93f'
-                        deleted: true
+                        deleted: false
                     }
                     'gql-lxp-course': {
                         table: 'sys_graphql_schema'
                         id: 'b070031a509e4679a9735703f869a333'
-                        deleted: true
+                        deleted: false
                     }
                     'gql-lxp-course-update': {
                         table: 'sys_graphql_schema'
@@ -109,12 +121,12 @@ declare global {
                     'gql-lxp-progress': {
                         table: 'sys_graphql_schema'
                         id: 'a388f53858474b0cadb8e000cb925aa0'
-                        deleted: true
+                        deleted: false
                     }
                     'gql-lxp-user-achievement': {
                         table: 'sys_graphql_schema'
                         id: '84ce4d3b40974590a7c4816264bf7d3b'
-                        deleted: true
+                        deleted: false
                     }
                     KafkaProducer: {
                         table: 'sys_script_include'
@@ -127,17 +139,17 @@ declare global {
                     'progress-content-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '8ef2f574ec0042c292358e3d942d61b2'
-                        deleted: true
+                        deleted: false
                     }
                     'progress-record-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'a1546bee7e75414091cc9144c590473f'
-                        deleted: true
+                        deleted: false
                     }
                     'progress-records-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '85a26cdbe9c848d6b043005286714197'
-                        deleted: true
+                        deleted: false
                     }
                     'src_server_achievement-resolver_ts': {
                         table: 'sys_module'
@@ -146,6 +158,14 @@ declare global {
                     'src_server_business-rules_push-course-content-event_js': {
                         table: 'sys_module'
                         id: '2a04f749adf44d76bcc66716e6ffd63f'
+                    }
+                    'src_server_business-rules_push-progress-content-event_js': {
+                        table: 'sys_module'
+                        id: '1d9a344b738d4ca082632f13fa9160bb'
+                    }
+                    'src_server_business-rules_push-user-achievement-event_js': {
+                        table: 'sys_module'
+                        id: '549a4bda871a4205942ddb0d8941ab2f'
                     }
                     'src_server_course-resolver_ts': {
                         table: 'sys_module'
@@ -174,27 +194,27 @@ declare global {
                     'update-course-desc-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '808a958bad0c48c0a54d8fa302de5c7d'
-                        deleted: true
+                        deleted: false
                     }
                     'user-achievement-achievement-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'c069c4d45df144e19205258f9d56d352'
-                        deleted: true
+                        deleted: false
                     }
                     'user-achievement-content-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '2b0fc31d7aab45029d1e57aeeba01d70'
-                        deleted: true
+                        deleted: false
                     }
                     'user-achievement-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'b5fef24339fa4d61bfdabfa75e10b12d'
-                        deleted: true
+                        deleted: false
                     }
                     'user-achievements-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '56263673e1a443dcadb170aa41d8853a'
-                        deleted: true
+                        deleted: false
                     }
                 }
                 composite: [
@@ -210,7 +230,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '12cea5204a59444aa5e82dd8eb979e53'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'b070031a509e4679a9735703f869a333'
                             path: 'Query:course'
@@ -219,7 +239,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '1f89c4fabfcc40298e91bc8cbf8f9216'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: '84ce4d3b40974590a7c4816264bf7d3b'
                             path: 'Query:userAchievements'
@@ -228,7 +248,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '5658cade36a74994a9614d36cc0155b2'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'c27feca68c4a421a9a59d4e755bcb93f'
                             path: 'Query:achievement'
@@ -237,7 +257,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '6aa6d1ae598d4d46a9846f7800779e4f'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'b070031a509e4679a9735703f869a333'
                             path: 'Mutation:updateCourseDescription'
@@ -246,7 +266,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '8863bb4ce2e7400aa9925f8e2f8067e5'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'a388f53858474b0cadb8e000cb925aa0'
                             path: 'Progress:content'
@@ -255,7 +275,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'a2d2807f4b0a4830aab0ebd8a44c973d'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'b070031a509e4679a9735703f869a333'
                             path: 'Query:courses'
@@ -273,7 +293,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'bfeee337003948f1b992bc161e32c6c9'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: '84ce4d3b40974590a7c4816264bf7d3b'
                             path: 'UserAchievement:achievement'
@@ -291,7 +311,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'd2c3b89d30194223b7adb7788fdd5bfe'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'a388f53858474b0cadb8e000cb925aa0'
                             path: 'Query:progressRecords'
@@ -318,7 +338,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'e237a214acde457c84e560b8393f4b66'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: '84ce4d3b40974590a7c4816264bf7d3b'
                             path: 'UserAchievement:content'
@@ -327,7 +347,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'e9b41ad551e44bde84f3dace8aa87043'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'a388f53858474b0cadb8e000cb925aa0'
                             path: 'Query:progressRecord'
@@ -336,7 +356,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'f33a173a379342079aa2c1481776400f'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: '84ce4d3b40974590a7c4816264bf7d3b'
                             path: 'Query:userAchievement'
@@ -345,7 +365,7 @@ declare global {
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: 'f75560e502dd48a28a6027d33715c5b7'
-                        deleted: true
+                        deleted: false
                         key: {
                             schema: 'c27feca68c4a421a9a59d4e755bcb93f'
                             path: 'Query:achievements'

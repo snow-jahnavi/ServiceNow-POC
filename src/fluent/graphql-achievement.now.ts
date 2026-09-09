@@ -12,11 +12,8 @@ GraphQLApi({
         name: String
         description: String
         user: String
-        dv_user: String
         achievement_type: String
-        dv_achievement_type: String
         badge: String
-        dv_badge: String
         points: Int
         earned_on: String
         active: Boolean

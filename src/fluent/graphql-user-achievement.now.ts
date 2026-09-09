@@ -18,18 +18,14 @@ GraphQLApi({
         short_description: String
         description: String
         state: String
-        dv_state: String
         type: String
-        dv_type: String
         language: String
-        dv_language: String
         rating: Float
         duration: String
         enrollment_count: Int
         view_count: Int
         active: Boolean
         published: String
-        dv_published: String
         number: String
         content_id: String
       }
@@ -39,9 +35,7 @@ GraphQLApi({
         name: String
         description: String
         achievement_type: String
-        dv_achievement_type: String
         badge: String
-        dv_badge: String
         points: Int
         active: Boolean
         sys_created_on: String
@@ -51,11 +45,8 @@ GraphQLApi({
       type UserAchievement {
         sys_id: ID!
         user: String
-        dv_user: String
         content: Course
-        dv_content: String
         achievement: Achievement
-        dv_achievement: String
         earned_on: String
         number: String
         sys_created_on: String

@@ -13,18 +13,14 @@ GraphQLApi({
         short_description: String
         description: String
         state: String
-        dv_state: String
         type: String
-        dv_type: String
         language: String
-        dv_language: String
         rating: Float
         duration: String
         enrollment_count: Int
         view_count: Int
         active: Boolean
         published: String
-        dv_published: String
         number: String
         content_id: String
       }
@@ -32,11 +28,8 @@ GraphQLApi({
       type Progress {
         sys_id: ID!
         user: String
-        dv_user: String
         content: Course
-        dv_content: String
         status: String
-        dv_status: String
         percentage: Int
         started_at: String
         completed_at: String
