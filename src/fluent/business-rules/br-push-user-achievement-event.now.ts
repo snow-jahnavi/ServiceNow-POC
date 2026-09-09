@@ -12,5 +12,5 @@ BusinessRule({
     filterCondition: 'achievement.type=certification^statusVALCHANGES^user.company=2f9b00b51b061c105b2699f4bd4bcb26^EQ',
     description:
         'Triggers when status changes on a user achievement record where the achievement type is certification, and pushes a content event to Kafka via KafkaProducer.pushContentEvent.',
-    script: Now.include('../server/business-rules/push-user-achievement-event.js'),
+    script: Now.include('../../server/business-rules/push-user-achievement-event.js'),
 })

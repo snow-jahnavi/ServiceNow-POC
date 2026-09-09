@@ -1,4 +1,4 @@
-import { gs } from '@servicenow/glide'
+/*import { gs } from '@servicenow/glide'
 // import { GlideRecord } from '@servicenow/glide'
 
 const LOG_PREFIX = '[LXP GraphQL] '
@@ -156,3 +156,4 @@ export function resolveCourse(env: any) {
         throw e
     }
 }
+*/

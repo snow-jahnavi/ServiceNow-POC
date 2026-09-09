@@ -75,6 +75,10 @@ declare global {
                         table: 'sys_scope_privilege'
                         id: 'ce00da2ec34343904aacbf0f050131c1'
                     }
+                    'course-level-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '55a4037f3afa4a77a0438ee37f4b496d'
+                    }
                     'course-resolver': {
                         table: 'sys_graphql_resolver'
                         id: '921eff97dea34015809448799570736f'
@@ -84,6 +88,14 @@ declare global {
                         table: 'sys_graphql_resolver'
                         id: '22014fd8797843c7a81c13a368ad0007'
                         deleted: true
+                    }
+                    'course-skill-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '5a2a3b3e2d534c34abd0b707f5302dd2'
+                    }
+                    'course-tags-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '245b23078c524ffd84eeb9d2b51f05ff'
                     }
                     'courses-list-resolver': {
                         table: 'sys_graphql_resolver'
@@ -141,6 +153,18 @@ declare global {
                         id: '8ef2f574ec0042c292358e3d942d61b2'
                         deleted: false
                     }
+                    'progress-course-level-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: 'bac23081e09e4c0ea634393921f6cd1b'
+                    }
+                    'progress-course-skill-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: 'cbe9083793264b3cb1edf3eb0d799348'
+                    }
+                    'progress-course-tags-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: 'f4a766b7d0ec4acaa5f8151fc145a697'
+                    }
                     'progress-record-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'a1546bee7e75414091cc9144c590473f'
@@ -154,6 +178,17 @@ declare global {
                     'src_server_achievement-resolver_ts': {
                         table: 'sys_module'
                         id: '56b53f80286c4aad893737eadc61bbfc'
+                        deleted: true
+                    }
+                    'src_server_achievement-single-resolver_js': {
+                        table: 'sys_module'
+                        id: 'e4644da0fdbe41c99928788385bf4058'
+                        deleted: true
+                    }
+                    'src_server_achievements-resolver_js': {
+                        table: 'sys_module'
+                        id: '7db97a346403488c8b331d182851cae0'
+                        deleted: true
                     }
                     'src_server_business-rules_push-course-content-event_js': {
                         table: 'sys_module'
@@ -167,17 +202,130 @@ declare global {
                         table: 'sys_module'
                         id: '549a4bda871a4205942ddb0d8941ab2f'
                     }
+                    'src_server_course-resolver_js': {
+                        table: 'sys_module'
+                        id: '7d8cc8c3be7e461d9654b6fede31482c'
+                        deleted: true
+                    }
                     'src_server_course-resolver_ts': {
                         table: 'sys_module'
                         id: 'ea4959620c9147a292378e8f4e41f301'
+                        deleted: true
+                    }
+                    'src_server_course-single-resolver_js': {
+                        table: 'sys_module'
+                        id: '2821d6ac0ba747588fc7d389c1586d6e'
+                        deleted: true
+                    }
+                    'src_server_course-update-desc-resolver_js': {
+                        table: 'sys_module'
+                        id: '88d212b1bed44292a7caab35a54969e8'
+                        deleted: true
                     }
                     'src_server_course-update-resolver_ts': {
                         table: 'sys_module'
                         id: 'ee4dae1dd0b94da98a55fffdb1752c14'
+                        deleted: true
+                    }
+                    'src_server_deprecated-resolvers_achievement-resolver_ts': {
+                        table: 'sys_module'
+                        id: 'ab04617bf41b4c148fd576c2269dbdb8'
+                    }
+                    'src_server_deprecated-resolvers_course-resolver_ts': {
+                        table: 'sys_module'
+                        id: '75d8f79474314473917e7ccae340462d'
+                    }
+                    'src_server_deprecated-resolvers_course-update-resolver_ts': {
+                        table: 'sys_module'
+                        id: '76b02cd3a3044fe1b0c06eab113ad081'
+                    }
+                    'src_server_deprecated-resolvers_progress-resolver_ts': {
+                        table: 'sys_module'
+                        id: 'a4875f2abb9c484fa7495f0319e8175f'
+                    }
+                    'src_server_deprecated-resolvers_user-achievement-resolver_ts': {
+                        table: 'sys_module'
+                        id: 'a19c584498a847d5b8a692ea8695ea33'
+                    }
+                    'src_server_progress-content-resolver_js': {
+                        table: 'sys_module'
+                        id: '95588f3b02954107be94d54540a45015'
+                        deleted: true
+                    }
+                    'src_server_progress-record-resolver_js': {
+                        table: 'sys_module'
+                        id: '1c8bb7d659274436af45bb316d0d9cb3'
+                        deleted: true
+                    }
+                    'src_server_progress-records-resolver_js': {
+                        table: 'sys_module'
+                        id: '44b484458b444907aaf513ec1a5ec756'
+                        deleted: true
                     }
                     'src_server_progress-resolver_ts': {
                         table: 'sys_module'
                         id: '020799c28c10445ea0e25dcd60742147'
+                        deleted: true
+                    }
+                    'src_server_resolvers_achievement-single-resolver_js': {
+                        table: 'sys_module'
+                        id: 'f57a04a88e0949bf8135574eea75d406'
+                    }
+                    'src_server_resolvers_achievements-resolver_js': {
+                        table: 'sys_module'
+                        id: '0ae7526c48334c0aa39e1a5cb0399816'
+                    }
+                    'src_server_resolvers_course-level-resolver_js': {
+                        table: 'sys_module'
+                        id: 'a4354602507d4641a76c2a6580ca5a4d'
+                    }
+                    'src_server_resolvers_course-resolver_js': {
+                        table: 'sys_module'
+                        id: 'de0717257f6645c791cd222fddf66fd8'
+                    }
+                    'src_server_resolvers_course-single-resolver_js': {
+                        table: 'sys_module'
+                        id: 'e68716eaf942419a86da5842fe8eefa3'
+                    }
+                    'src_server_resolvers_course-skill-resolver_js': {
+                        table: 'sys_module'
+                        id: '41320e341bc14df58e63094d0f9f1d4f'
+                    }
+                    'src_server_resolvers_course-tags-resolver_js': {
+                        table: 'sys_module'
+                        id: '11a159f6a0804e609a06b8b246abf0da'
+                    }
+                    'src_server_resolvers_course-update-desc-resolver_js': {
+                        table: 'sys_module'
+                        id: '0de537f78357485fb03369cc1dea68e3'
+                    }
+                    'src_server_resolvers_progress-content-resolver_js': {
+                        table: 'sys_module'
+                        id: 'aeb8d2f24a9c40d5b4a351d5ee42ba5d'
+                    }
+                    'src_server_resolvers_progress-record-resolver_js': {
+                        table: 'sys_module'
+                        id: '716cb27c3046488b9b669f3b3a2a0015'
+                    }
+                    'src_server_resolvers_progress-records-resolver_js': {
+                        table: 'sys_module'
+                        id: '189f7275e9f94892b2225a3d31dfe50c'
+                    }
+                    'src_server_resolvers_user-achievement-achievement-resolver_js': {
+                        table: 'sys_module'
+                        id: '856e3a6732054f6ab3d2032c16c2276d'
+                    }
+                    'src_server_resolvers_user-achievement-content-resolver_js': {
+                        table: 'sys_module'
+                        id: 'ea57a576663d4e3e95210574584330af'
+                    }
+                    'src_server_resolvers_user-achievement-single-resolver_js': {
+                        table: 'sys_module'
+                        id: '83dd1622a98b4839b45da514466d6b59'
+                    }
+                    'src_server_resolvers_user-achievements-resolver_js': {
+                        table: 'sys_module'
+                        id: 'e14efc0147e044ff895d10aa38cc1d06'
                     }
                     src_server_script_ts: {
                         table: 'sys_module'
@@ -187,9 +335,30 @@ declare global {
                         table: 'sys_module'
                         id: '241959dfe0c94df1b96074141e375a33'
                     }
+                    'src_server_user-achievement-achievement-resolver_js': {
+                        table: 'sys_module'
+                        id: '6bd38ccb71e44b239c26d82e3b432183'
+                        deleted: true
+                    }
+                    'src_server_user-achievement-content-resolver_js': {
+                        table: 'sys_module'
+                        id: '424053059e104493b5f283bc52118645'
+                        deleted: true
+                    }
                     'src_server_user-achievement-resolver_ts': {
                         table: 'sys_module'
                         id: 'c08c64be6f1544a5867c62515c5e6638'
+                        deleted: true
+                    }
+                    'src_server_user-achievement-single-resolver_js': {
+                        table: 'sys_module'
+                        id: 'a55a4545e83e4dbc910503fd8f1c73eb'
+                        deleted: true
+                    }
+                    'src_server_user-achievements-resolver_js': {
+                        table: 'sys_module'
+                        id: 'bee682d7610f48f4a7e11c9eccebc08e'
+                        deleted: true
                     }
                     'update-course-desc-resolver': {
                         table: 'sys_graphql_resolver'
@@ -206,6 +375,18 @@ declare global {
                         id: '2b0fc31d7aab45029d1e57aeeba01d70'
                         deleted: false
                     }
+                    'user-achievement-course-level-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '200cd44a675648b8a29f540ecfac8a72'
+                    }
+                    'user-achievement-course-skill-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '5b5205dcf9d34c4d8cf2d71cfd8b9d9a'
+                    }
+                    'user-achievement-course-tags-resolver': {
+                        table: 'sys_graphql_resolver'
+                        id: '6ded8a2fc5d64a5ea61cf4c4a6c75bbf'
+                    }
                     'user-achievement-resolver': {
                         table: 'sys_graphql_resolver'
                         id: 'b5fef24339fa4d61bfdabfa75e10b12d'
@@ -218,6 +399,22 @@ declare global {
                     }
                 }
                 composite: [
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: '0bd27a522f7f4e41ba1a991e3d810f63'
+                        key: {
+                            schema: 'b070031a509e4679a9735703f869a333'
+                            path: 'Course:x_snc_nl_lxp_tags'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: '0f0482b5cfe545f1aa0ce4473c44b80e'
+                        key: {
+                            schema: 'a388f53858474b0cadb8e000cb925aa0'
+                            path: 'Course:level'
+                        }
+                    },
                     {
                         table: 'sys_graphql_resolver_mapping'
                         id: '10f1dba91f1646df8577790760e0c4cb'
@@ -247,11 +444,27 @@ declare global {
                     },
                     {
                         table: 'sys_graphql_resolver_mapping'
+                        id: '27ffacead5434b75b24f91afacf7f6d6'
+                        key: {
+                            schema: '84ce4d3b40974590a7c4816264bf7d3b'
+                            path: 'Course:x_snc_nl_lxp_tags'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
                         id: '5658cade36a74994a9614d36cc0155b2'
                         deleted: false
                         key: {
                             schema: 'c27feca68c4a421a9a59d4e755bcb93f'
                             path: 'Query:achievement'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: '6145a64bf204456e8019b71e0cfc1217'
+                        key: {
+                            schema: 'b070031a509e4679a9735703f869a333'
+                            path: 'Course:skill'
                         }
                     },
                     {
@@ -265,11 +478,27 @@ declare global {
                     },
                     {
                         table: 'sys_graphql_resolver_mapping'
+                        id: '8121430595f44f48a649446205c2ead5'
+                        key: {
+                            schema: 'a388f53858474b0cadb8e000cb925aa0'
+                            path: 'Course:skill'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
                         id: '8863bb4ce2e7400aa9925f8e2f8067e5'
                         deleted: false
                         key: {
                             schema: 'a388f53858474b0cadb8e000cb925aa0'
                             path: 'Progress:content'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: '932662d116b341679933c6ca60df42e5'
+                        key: {
+                            schema: '84ce4d3b40974590a7c4816264bf7d3b'
+                            path: 'Course:level'
                         }
                     },
                     {
@@ -301,11 +530,27 @@ declare global {
                     },
                     {
                         table: 'sys_graphql_resolver_mapping'
+                        id: 'c2b5f3b8c74546da8406e28e22d046a2'
+                        key: {
+                            schema: 'b070031a509e4679a9735703f869a333'
+                            path: 'Course:level'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
                         id: 'c31d34fd3d024297b7b9f26344fc9af2'
                         deleted: true
                         key: {
                             schema: 'f407d99118c2471e92538cdac487720e'
                             path: 'Mutation:updateCourseDescription'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: 'd200a14526af4bccb1402945153e2d53'
+                        key: {
+                            schema: '84ce4d3b40974590a7c4816264bf7d3b'
+                            path: 'Course:skill'
                         }
                     },
                     {
@@ -369,6 +614,14 @@ declare global {
                         key: {
                             schema: 'c27feca68c4a421a9a59d4e755bcb93f'
                             path: 'Query:achievements'
+                        }
+                    },
+                    {
+                        table: 'sys_graphql_resolver_mapping'
+                        id: 'f7bb49cb54d549228878f2c6fa8a424a'
+                        key: {
+                            schema: 'a388f53858474b0cadb8e000cb925aa0'
+                            path: 'Course:x_snc_nl_lxp_tags'
                         }
                     },
                 ]

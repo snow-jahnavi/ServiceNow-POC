@@ -1,10 +1,5 @@
 import { GraphQLApi } from '@servicenow/sdk/core'
-import {
-    resolveUserAchievements,
-    resolveUserAchievement,
-    resolveUserAchievementContent,
-    resolveUserAchievementAchievement,
-} from '../server/user-achievement-resolver'
+import "@servicenow/sdk/global";
 
 GraphQLApi({
     $id: Now.ID['gql-lxp-user-achievement'],
@@ -12,6 +7,29 @@ GraphQLApi({
     namespace: 'lxpUserAchievement',
     requiresSncInternalRole: false,
     schema: `
+      type Tag {
+        sys_id: ID!
+        name: String
+        active: Boolean
+      }
+
+      type Skill {
+        sys_id: ID!
+        name: String
+        description: String
+        active: Boolean
+        keywords: String
+        display_skill_name: String
+      }
+
+      type SkillLevel {
+        sys_id: ID!
+        name: String
+        description: String
+        value: Int
+        color: String
+      }
+
       type Course {
         sys_id: ID!
         name: String
@@ -28,6 +46,11 @@ GraphQLApi({
         published: String
         number: String
         content_id: String
+        link: String
+        u_banner_image: String
+        skill: [Skill]
+        level: SkillLevel
+        x_snc_nl_lxp_tags: [Tag]
       }
 
       type Achievement {
@@ -63,25 +86,43 @@ GraphQLApi({
             $id: Now.ID['user-achievements-resolver'],
             name: 'userAchievementsResolver',
             paths: ['Query:userAchievements'],
-            script: resolveUserAchievements,
+            script: Now.include("../../server/resolvers/user-achievements-resolver.js"),
         },
         {
             $id: Now.ID['user-achievement-resolver'],
             name: 'userAchievementResolver',
             paths: ['Query:userAchievement'],
-            script: resolveUserAchievement,
+            script: Now.include("../../server/resolvers/user-achievement-single-resolver.js"),
         },
         {
             $id: Now.ID['user-achievement-content-resolver'],
             name: 'userAchievementContentResolver',
             paths: ['UserAchievement:content'],
-            script: resolveUserAchievementContent,
+            script: Now.include("../../server/resolvers/user-achievement-content-resolver.js"),
         },
         {
             $id: Now.ID['user-achievement-achievement-resolver'],
             name: 'userAchievementAchievementResolver',
             paths: ['UserAchievement:achievement'],
-            script: resolveUserAchievementAchievement,
+            script: Now.include("../../server/resolvers/user-achievement-achievement-resolver.js"),
+        },
+        {
+            $id: Now.ID['user-achievement-course-tags-resolver'],
+            name: 'userAchievementCourseTagsResolver',
+            paths: ['Course:x_snc_nl_lxp_tags'],
+            script: Now.include("../../server/resolvers/course-tags-resolver.js"),
+        },
+        {
+            $id: Now.ID['user-achievement-course-skill-resolver'],
+            name: 'userAchievementCourseSkillResolver',
+            paths: ['Course:skill'],
+            script: Now.include("../../server/resolvers/course-skill-resolver.js"),
+        },
+        {
+            $id: Now.ID['user-achievement-course-level-resolver'],
+            name: 'userAchievementCourseLevelResolver',
+            paths: ['Course:level'],
+            script: Now.include("../../server/resolvers/course-level-resolver.js"),
         },
     ],
 })

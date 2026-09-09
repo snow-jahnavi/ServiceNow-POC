@@ -12,5 +12,5 @@ BusinessRule({
     filterCondition: 'content.type=on_demand^stateCHANGESTOenrolled^ORstateCHANGESTOcompleted^user.company=2f9b00b51b061c105b2699f4bd4bcb26^EQ',
     description:
         'Triggers when an on-demand progress record state changes to enrolled or completed for users from FutureX IT Ltd, and pushes a content event to Kafka via KafkaProducer.pushContentEvent.',
-    script: Now.include('../server/business-rules/push-progress-content-event.js'),
+    script: Now.include('../../server/business-rules/push-progress-content-event.js'),
 })

@@ -12,5 +12,5 @@ BusinessRule({
     filterCondition: 'stateCHANGESTOpublished^ORstateCHANGESTOretired^type=on_demand^EQ',
     description:
         'Triggers when an on-demand course state changes to published or retired, and pushes a content event to Kafka via KafkaProducer.pushContentEvent.',
-    script: Now.include('../server/business-rules/push-course-content-event.js'),
+    script: Now.include('../../server/business-rules/push-course-content-event.js'),
 })

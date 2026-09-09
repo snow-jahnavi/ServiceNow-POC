@@ -1,5 +1,5 @@
 import { GraphQLApi } from '@servicenow/sdk/core'
-import { resolveAchievements, resolveAchievement } from '../server/achievement-resolver'
+import "@servicenow/sdk/global";
 
 GraphQLApi({
     $id: Now.ID['gql-lxp-achievement'],
@@ -31,13 +31,13 @@ GraphQLApi({
             $id: Now.ID['achievements-resolver'],
             name: 'achievementsResolver',
             paths: ['Query:achievements'],
-            script: resolveAchievements,
+            script: Now.include("../../server/resolvers/achievements-resolver.js"),
         },
         {
             $id: Now.ID['achievement-resolver'],
             name: 'achievementResolver',
             paths: ['Query:achievement'],
-            script: resolveAchievement,
+            script: Now.include("../../server/resolvers/achievement-single-resolver.js"),
         },
     ],
 })
