@@ -13,7 +13,7 @@ KafkaProducer.prototype = {
      */
     pushToKafka: function (topic, payload, operation, injectCorrelationId) {
         try {
-            var kafkaUtils = new global.UniversalProfileKafkaUtils()
+            var kafkaUtils = new x_snc_nl_lxp.UniversalProfileKafkaUtils()
             kafkaUtils.insertKafkaOutboundQueue(topic, payload, operation, injectCorrelationId)
             gs.info('KafkaProducer: Successfully enqueued message to topic [' + topic + '] with operation [' + operation + '] and correlationId [' + injectCorrelationId + ']')
             return true
@@ -29,8 +29,8 @@ KafkaProducer.prototype = {
      * @param {string} operation - The operation type ("insert" or "update").
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
-    pushContentEvent: function (gr, operation, correlationId) {
-        var payload = JSON.stringify({ sys_id: gr.getUniqueValue() })
+    pushContentEvent: function (gr, operation) {
+        var payload = JSON.stringify({ sys_id: gr.getUniqueValue(), table: gr.getTableName() })
         var correlationId = gr.getValue('content_id')
         return this.pushToKafka('snu.content.event', payload, operation, correlationId)
     },
@@ -41,8 +41,8 @@ KafkaProducer.prototype = {
      * @param {string} operation - The operation type ("insert" or "update").
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
-    pushUserEvent: function (gr, operation, correlationId) {
-        var payload = JSON.stringify({ sys_id: gr.getUniqueValue() })
+    pushUserEvent: function (gr, operation) {
+        var payload = JSON.stringify({ sys_id: gr.getUniqueValue(), table: gr.getTableName() })
         var correlationId = gr.getValue('user')
         return this.pushToKafka('snu.user.events', payload, operation, correlationId)
     },
