@@ -52,7 +52,7 @@ GraphQLApi({
         number: String
         content_id: String
         link: String
-        u_banner_image: String
+        u_banner_image_link: String
         skill: [Skill]
         level: SkillLevel
         x_snc_nl_lxp_tags: [Tag]

@@ -5,6 +5,10 @@ declare global {
         namespace Internal {
             interface Keys extends KeysRegistry {
                 explicit: {
+                    '1aa13bd8c3d78bd04aacbf0f0501313d': {
+                        table: 'sys_scope_privilege'
+                        id: '1aa13bd8c3d78bd04aacbf0f0501313d'
+                    }
                     '2f143429974b8b10f168f0e3a253afa5': {
                         table: 'sys_scope_privilege'
                         id: '2f143429974b8b10f168f0e3a253afa5'
@@ -13,13 +17,25 @@ declare global {
                         table: 'sys_scope_privilege'
                         id: '49919569974f8b10f168f0e3a253af7a'
                     }
+                    '6eb3d39cc3db4bd04aacbf0f050131ae': {
+                        table: 'sys_scope_privilege'
+                        id: '6eb3d39cc3db4bd04aacbf0f050131ae'
+                    }
                     '89694efd97cbcf10f168f0e3a253af1f': {
                         table: 'sys_scope_privilege'
                         id: '89694efd97cbcf10f168f0e3a253af1f'
                     }
+                    '95608f54879743144419b956dabb35b0': {
+                        table: 'sys_scope_privilege'
+                        id: '95608f54879743144419b956dabb35b0'
+                    }
                     '975de47597cb0f10f168f0e3a253afb1': {
                         table: 'sys_scope_privilege'
                         id: '975de47597cb0f10f168f0e3a253afb1'
+                    }
+                    '98603354c3d78bd04aacbf0f050131a9': {
+                        table: 'sys_scope_privilege'
+                        id: '98603354c3d78bd04aacbf0f050131a9'
                     }
                     '9c3d0fbb97f6cb90f168f0e3a253afb0': {
                         table: 'sys_scope_privilege'
@@ -43,9 +59,17 @@ declare global {
                         id: 'bd7aaf7e8ba2498f9b1195249a8c7051'
                         deleted: false
                     }
+                    adb9e7dcc3178bd04aacbf0f05013197: {
+                        table: 'sys_scope_privilege'
+                        id: 'adb9e7dcc3178bd04aacbf0f05013197'
+                    }
                     b4158b379736cb90f168f0e3a253af93: {
                         table: 'sys_scope_privilege'
                         id: 'b4158b379736cb90f168f0e3a253af93'
+                    }
+                    b7b51fdcc3534fd0f61939ff0501314d: {
+                        table: 'sys_scope_privilege'
+                        id: 'b7b51fdcc3534fd0f61939ff0501314d'
                     }
                     bc15c7739736cb90f168f0e3a253afea: {
                         table: 'sys_scope_privilege'
@@ -110,6 +134,10 @@ declare global {
                     cs0: {
                         table: 'sys_script_client'
                         id: 'e7c35bcd9a5e434b8745841989776ca1'
+                    }
+                    dbdd67d0c3978bd04aacbf0f05013179: {
+                        table: 'sys_scope_privilege'
+                        id: 'dbdd67d0c3978bd04aacbf0f05013179'
                     }
                     fcd335259783cb10f168f0e3a253af58: {
                         table: 'sys_scope_privilege'

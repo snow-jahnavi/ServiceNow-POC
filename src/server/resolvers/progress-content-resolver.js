@@ -1,6 +1,6 @@
 (function process( /*ResolverEnvironment*/ env) {
     try {
-        var COURSE_FIELDS = 'sys_id,name,short_description,description,state,type,language,rating,duration,enrollment_count,view_count,active,published,number,content_id,link,u_banner_image,skill,x_snc_nl_lxp_tags,level';
+        var COURSE_FIELDS = 'sys_id,name,short_description,description,state,type,language,rating,duration,enrollment_count,view_count,active,published,number,content_id,link,u_banner_image_link,skill,x_snc_nl_lxp_tags,level';
 
         var source = env.getSource();
         var contentSysId = source.content;
@@ -32,7 +32,7 @@
                 number: rec.number || '',
                 content_id: rec.content_id || '',
                 link: gs.getProperty('glide.servlet.uri') + 'lxp/en?id=learning_course_prev&course_id=' + (rec.sys_id || ''),
-                u_banner_image: rec.u_banner_image || '',
+                u_banner_image_link: gs.getProperty('glide.servlet.uri') + (rec.u_banner_image_link || ''),
                 skill: rec.skill || '',
                 x_snc_nl_lxp_tags: rec.x_snc_nl_lxp_tags || '',
                 level: rec.level || '',

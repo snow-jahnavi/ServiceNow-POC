@@ -30,6 +30,7 @@ KafkaProducer.prototype = {
      * @returns {boolean} true if the message was enqueued successfully, false otherwise.
      */
     pushContentEvent: function (gr, operation) {
+        gs.info("[TEST] called");
         var payload = JSON.stringify({ sys_id: gr.getUniqueValue(), table: gr.getTableName() })
         var correlationId = gr.getValue('content_id')
         return this.pushToKafka('snu.content.event', payload, operation, correlationId)
